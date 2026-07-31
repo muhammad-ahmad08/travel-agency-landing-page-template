@@ -1,26 +1,34 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 
+  DESIGN SYSTEM: Color Tokens & Typography
+  By defining these here, we can use classes like `bg-primary` or `text-gold` in our components.
+  If a client wants a different color later, we only change it right here!
+*/
+@theme {
+  /* Brand Colors */
+  --color-primary: #1e3a8a;       /* Deep Trust Blue */
+  --color-primary-dark: #172554;  /* Darker Blue for hover states */
+  --color-gold: #d97706;          /* Premium Gold/Amber */
+  --color-gold-light: #fbbf24;    /* Lighter Gold for accents */
+  
+  /* Neutral/Background Colors */
+  --color-background: #f8fafc;    /* Very light grey/blue for page background */
+  --color-surface: #ffffff;       /* Pure white for cards */
+  --color-text-main: #0f172a;     /* Almost black for main text */
+  --color-text-muted: #64748b;    /* Grey for subtitles/paragraphs */
+
+  /* Typography */
+--font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+--font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 
+  GLOBAL BASE STYLES
+  This applies to the whole website automatically.
+*/
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
 }
