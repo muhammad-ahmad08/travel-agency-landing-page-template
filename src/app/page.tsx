@@ -1,7 +1,8 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/layout/Hero";
 import TrustBar from "@/components/layout/TrustBar";
-import Services from "@/components/sections/Services"; // <-- Import here
+import Services from "@/components/sections/Services";
+import FeaturedPackages from "@/components/sections/FeaturedPackages"; // <-- Import
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 
 export default function Home() {
@@ -10,7 +11,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TrustBar />
-      <Services /> 
+      <Services />
+      <FeaturedPackages /> {/* <-- Add here */}
       <WhatsAppFloat />
     </>
   );
