@@ -36,7 +36,7 @@ export default function PackageCard({ image, title, duration, rating, price, bad
         {/* Rating & Duration */}
         <div className="flex justify-between items-center mb-3 text-sm text-text-muted">
           <span className="flex items-center gap-1 text-gold font-semibold">
-            <FaStar /> {rating} Reviews
+            <FaStar /> {rating} Rating
           </span>
           <span className="flex items-center gap-1">
             <FaClock /> {duration}
