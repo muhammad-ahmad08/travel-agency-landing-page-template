@@ -6,7 +6,9 @@ import FeaturedPackages from "@/components/sections/FeaturedPackages";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Testimonials from "@/components/sections/Testimonials";
 import Gallery from "@/components/sections/Gallery";
-import Contact from "@/components/sections/Contact"; // <-- Import
+import Contact from "@/components/sections/Contact";
+import CTA from "@/components/sections/CTA"; // <-- Import
+import Footer from "@/components/layout/Footer"; // <-- Import
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 
 export default function Home() {
@@ -20,7 +22,9 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <Gallery />
-      <Contact /> {/* <-- Add here */}
+      <Contact />
+      <CTA /> {/* <-- Add here */}
+      <Footer /> {/* <-- Add here */}
       <WhatsAppFloat />
     </>
   );

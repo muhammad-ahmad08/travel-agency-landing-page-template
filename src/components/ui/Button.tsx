@@ -18,11 +18,12 @@ export default function Button({
 }: ButtonProps) {
   
   // 2. Define the Tailwind classes for each variant using our Design Tokens
-  const baseStyles = "px-8 py-3 rounded-lg font-heading font-semibold transition-all duration-300 transform hover:scale-105 shadow-md";
+const baseStyles = "px-8 py-3 rounded-lg font-heading font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md";
   
+  // 2. Upgraded Variants: Added colored glowing shadows (shadow-[...])
   const variants = {
-    primary: "bg-primary text-white hover:bg-primary-dark",
-    gold: "bg-gold text-white hover:bg-gold-light",
+    primary: "bg-primary text-white hover:bg-primary-dark shadow-[0_4px_15px_rgba(30,58,138,0.4)] hover:shadow-[0_8px_25px_rgba(30,58,138,0.6)]",
+    gold: "bg-gold text-white hover:bg-gold-light shadow-[0_4px_15px_rgba(217,119,6,0.4)] hover:shadow-[0_8px_25px_rgba(217,119,6,0.6)]",
     outline: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white",
   };
 
