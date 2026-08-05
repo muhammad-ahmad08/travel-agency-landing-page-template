@@ -6,10 +6,10 @@ import SectionTitle from "@/components/ui/SectionTitle";
 const galleryImages = [
   { src: "/images/gallery/g1.png", title: "Ramadan Umrah Group", span: "row-span-2" },
   { src: "/images/gallery/g2.png", title: "Istanbul Tour", span: "" },
-  { src: "/images/gallery/g3.png", title: "Corporate tour", span: "" },
-  { src: "/images/gallery/g4.png", title: "Hajj 2023", span: "row-span-2" },
-  { src: "/images/gallery/g5.png", title: "Luxury Maldives", span: "" },
-  { src: "/images/gallery/g6.png", title: "Visa Success", span: "" },
+  { src: "/images/gallery/g3.jpg", title: "Corporate tour", span: "" },
+  { src: "/images/gallery/g4.webp", title: "Hajj 2025", span: "row-span-2" },
+  { src: "/images/gallery/g5.webp", title: "Luxury Maldives", span: "" },
+  { src: "/images/gallery/g6.jpg", title: "Visa Success", span: "" },
 ];
 
 export default function Gallery() {
