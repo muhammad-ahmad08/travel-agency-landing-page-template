@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -14,17 +14,16 @@ export default function Contact() {
     message: ""
   });
 
-  // New state for button loading and success messages
   const [isSending, setIsSending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSending(true); // Disable button and show "Sending..."
+    setIsSending(true);
     
     try {
       // 1. Send the email via our Next.js API Route
@@ -49,7 +48,7 @@ export default function Contact() {
     } catch (error) {
       console.error("Error sending inquiry:", error);
     } finally {
-      setIsSending(false); // Re-enable button
+      setIsSending(false);
     }
   };
 
@@ -126,14 +125,13 @@ export default function Contact() {
                 ></textarea>
               </div>
               
-              {/* Button changes text based on isSending state */}
               <Button type="submit" variant="gold" className="w-full">
                 {isSending ? "Sending Inquiry..." : "Submit Inquiry"}
               </Button>
             </form>
           </div>
 
-          {/* Right Side: Map & Contact Info (Kept the same) */}
+          {/* Right Side: Map & Contact Info */}
           <div className="bg-primary text-white p-8 md:p-10 flex flex-col">
             <h3 className="font-heading text-2xl font-bold mb-6">Visit Our Office</h3>
             
