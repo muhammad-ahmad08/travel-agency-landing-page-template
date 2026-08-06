@@ -1,13 +1,12 @@
-"use client"; // This tells Next.js this component runs in the browser
+"use client";
 
-import { useState } from "react"; // Our memory hook
+import { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 
 export default function Contact() {
-  // 1. Create memory boxes for our form inputs
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -15,23 +14,43 @@ export default function Contact() {
     message: ""
   });
 
-  // 2. Function to update the memory boxes when the user types
+  // New state for button loading and success messages
+  const [isSending, setIsSending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 3. Function to handle the submit button
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Stops the page from reloading
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSending(true); // Disable button and show "Sending..."
     
-    // Format the message for WhatsApp
-    const whatsappMessage = `*New Travel Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Destination:* ${formData.destination}%0A*Message:* ${formData.message}`;
-    
-    // Replace with your actual agency number
-    const whatsappNumber = "923001234567"; 
-    
-    // Open WhatsApp in a new tab with the pre-filled message
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+    try {
+      // 1. Send the email via our Next.js API Route
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      // 2. Open WhatsApp with the pre-filled message
+      const whatsappMessage = `*New Travel Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Destination:* ${formData.destination}%0A*Message:* ${formData.message}`;
+      const whatsappNumber = "923001234567"; 
+      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+
+      // 3. Show success message and reset form
+      setIsSuccess(true);
+      setFormData({ name: "", phone: "", destination: "Umrah Package", message: "" });
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+
+    } catch (error) {
+      console.error("Error sending inquiry:", error);
+    } finally {
+      setIsSending(false); // Re-enable button
+    }
   };
 
   return (
@@ -46,13 +65,21 @@ export default function Contact() {
             <h3 className="font-heading text-2xl font-bold text-primary mb-6">
               Send us an Inquiry
             </h3>
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-5">
+            
+            {/* Success Message */}
+            {isSuccess && (
+              <div className="mb-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg">
+                ✅ Inquiry sent successfully! Check your WhatsApp.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-medium text-text-main mb-1">Full Name</label>
                   <input 
                     type="text" 
-                    name="name" // Must match the key in our useState
+                    name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -64,7 +91,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-text-main mb-1">Phone Number</label>
                   <input 
                     type="tel" 
-                    name="phone" // Must match the key in our useState
+                    name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     required
@@ -76,7 +103,7 @@ export default function Contact() {
               <div>
                 <label className="block text-sm font-medium text-text-main mb-1">Destination</label>
                 <select 
-                  name="destination" // Must match the key in our useState
+                  name="destination"
                   value={formData.destination}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-white"
@@ -90,7 +117,7 @@ export default function Contact() {
               <div>
                 <label className="block text-sm font-medium text-text-main mb-1">Message (Optional)</label>
                 <textarea 
-                  name="message" // Must match the key in our useState
+                  name="message"
                   rows={3} 
                   value={formData.message}
                   onChange={handleChange}
@@ -98,12 +125,15 @@ export default function Contact() {
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
                 ></textarea>
               </div>
-              {/* 4. Trigger our function on submit */}
-              <Button type="submit" variant="gold" className="w-full">Submit Inquiry via WhatsApp</Button>
+              
+              {/* Button changes text based on isSending state */}
+              <Button type="submit" variant="gold" className="w-full">
+                {isSending ? "Sending Inquiry..." : "Submit Inquiry"}
+              </Button>
             </form>
           </div>
 
-          {/* Right Side: Map & Contact Info (Kept exactly the same) */}
+          {/* Right Side: Map & Contact Info (Kept the same) */}
           <div className="bg-primary text-white p-8 md:p-10 flex flex-col">
             <h3 className="font-heading text-2xl font-bold mb-6">Visit Our Office</h3>
             
