@@ -33,3 +33,36 @@ body {
   font-family: var(--font-sans);
 }
 
+/* =========================================
+   Premium Pure CSS Preloader Animations
+   ========================================= */
+
+/* 1. Whole screen fades out and slightly zooms up at the end */
+@keyframes preloaderExit {
+  0%, 70% { opacity: 1; visibility: visible; transform: scale(1); }
+  100% { opacity: 0; visibility: hidden; transform: scale(1.05); }
+}
+
+.preloader-container {
+  animation: preloaderExit 2s forwards ease-in-out;
+}
+
+/* 2. Logo fades in and scales up smoothly at the start */
+@keyframes logoIntro {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.preloader-logo {
+  animation: logoIntro 0.8s forwards cubic-bezier(0.22, 1, 0.36, 1); /* Premium easing curve */
+}
+
+/* 3. Loading bar grows from 0 to 100% width smoothly */
+@keyframes loadingBarGrow {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.preloader-bar {
+  animation: loadingBarGrow 1.5s forwards ease-in-out;
+}

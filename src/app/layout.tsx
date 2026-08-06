@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import Preloader from "@/components/layout/Preloader";
 
 // Initialize the fonts
 const inter = Inter({
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       {/* We apply the font variables to the body tag */}
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+        <Preloader />
         {children}
       </body>
     </html>

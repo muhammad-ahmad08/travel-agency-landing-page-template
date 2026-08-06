@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import Container from "@/components/ui/Container";
+import Logo from "../ui/Logo";
 
 export default function Footer() {
   return (
@@ -10,9 +11,7 @@ export default function Footer() {
           
           {/* Column 1: Brand & About */}
           <div className="md:col-span-1">
-            <Link href="/" className="font-heading text-2xl font-extrabold text-white mb-4 block">
-              Al-<span className="text-gold">Safar</span> Tours
-            </Link>
+            <Logo variant="light" rounded /> 
             <p className="text-sm leading-relaxed">
               Your trusted partner for Hajj, Umrah, and international travel. Providing premium, hassle-free journeys with 100% transparency.
             </p>

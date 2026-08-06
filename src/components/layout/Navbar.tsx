@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import Logo from "../ui/Logo";
 
 export default function Navbar() {
   return (
@@ -10,9 +11,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo / Brand Name */}
-          <Link href="/" className="font-heading text-2xl font-extrabold text-primary">
-            Al-<span className="text-gold">Safar</span> Tours
-          </Link>
+          <Logo variant="dark" />
 
           {/* Desktop Navigation Links (hidden on mobile) */}
           <div className="hidden md:flex items-center gap-8 font-heading font-medium text-text-main">
