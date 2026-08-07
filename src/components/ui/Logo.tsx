@@ -21,7 +21,7 @@ export default function Logo({ variant = "dark", rounded = false, className = ""
           width={180}
           height={50}
           // h-10 forces the height to 40px, w-auto keeps the aspect ratio perfect. This fixes the navbar!
-          className="h-12 w-auto md:h-21" 
+          className="h-10 w-auto md:h-15" 
           priority
         />
       </div>

@@ -6,7 +6,7 @@ import { FaCheckCircle } from "react-icons/fa";
 export default function Hero() {
   return (
     // relative positioning so we can layer text over the image
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       
       {/* Next.js Image Background */}
       <Image
@@ -38,7 +38,7 @@ export default function Hero() {
           {/* Trust Badges */}
       <div className="absolute bottom-10 left-0 right-0 z-20">
         <Container>
-          <div className="flex items-center justify-center gap-6 flex-wrap">
+          <div className="flex items-center justify-center gap-6 flex-wrap hidden md:blocak">
             {["IATA Accredited", "Ministry of Hajj Approved", "TAAP Member", "DTS Certified"].map((badge) => (
               <div key={badge} className="flex items-center gap-2 text-white/90 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
                 <FaCheckCircle className="text-gold text-sm" />
