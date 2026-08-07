@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -34,6 +35,19 @@ export default function Hero() {
           </Button>
         </div>
       </Container>
+          {/* Trust Badges */}
+      <div className="absolute bottom-10 left-0 right-0 z-20">
+        <Container>
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            {["IATA Accredited", "Ministry of Hajj Approved", "TAAP Member", "DTS Certified"].map((badge) => (
+              <div key={badge} className="flex items-center gap-2 text-white/90 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                <FaCheckCircle className="text-gold text-sm" />
+                <span className="text-sm font-semibold tracking-wide">{badge}</span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }
