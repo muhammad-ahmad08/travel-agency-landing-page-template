@@ -5,6 +5,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
+import Reveal from "../ui/Reveal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -54,6 +55,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-background">
+      <Reveal>
       <Container>
         <SectionTitle subtitle="Get In Touch" title="Plan Your Next Journey" />
         
@@ -174,6 +176,7 @@ export default function Contact() {
 
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

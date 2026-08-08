@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "../ui/Reveal";
 
 // 1. Add your real Google Reviews here later
 const reviews = [
@@ -54,6 +55,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 bg-background">
+      <Reveal>
       <Container>
         <SectionTitle subtitle="Client Testimonials" title="What Our Travelers Say" />
         
@@ -110,6 +112,7 @@ export default function Testimonials() {
           ))}
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

@@ -3,11 +3,11 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { FaCheckCircle } from "react-icons/fa";
 
+
 export default function Hero() {
   return (
     // relative positioning so we can layer text over the image
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      
       {/* Next.js Image Background */}
       <Image
         src="/images/hero-bg.jpg" // Correct path: starts from inside the 'public' folder

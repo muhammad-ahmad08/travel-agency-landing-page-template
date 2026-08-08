@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "../ui/Reveal";
 
 // Dummy data for our gallery
 const galleryImages = [
@@ -15,6 +16,7 @@ const galleryImages = [
 export default function Gallery() {
   return (
     <section className="py-20 bg-white">
+      <Reveal>
       <Container>
         <SectionTitle subtitle="Our Memories" title="Happy Travelers Gallery" />
         
@@ -48,6 +50,7 @@ export default function Gallery() {
 
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

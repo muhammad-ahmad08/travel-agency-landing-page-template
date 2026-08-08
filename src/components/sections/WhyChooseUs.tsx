@@ -3,6 +3,7 @@ import { FaHotel, FaShieldAlt, FaHeadset } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
+import Reveal from "../ui/Reveal";
 
 const features = [
   {
@@ -25,6 +26,7 @@ const features = [
 export default function WhyChooseUs() {
   return (
     <section className="py-20 bg-white">
+      <Reveal>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
@@ -76,6 +78,7 @@ export default function WhyChooseUs() {
 
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

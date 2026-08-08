@@ -1,9 +1,11 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import Reveal from "../ui/Reveal";
 
 export default function CTA() {
   return (
     <section className="bg-primary-dark py-16 relative overflow-hidden">
+      <Reveal>
       {/* Decorative background blobs for a premium feel */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-gold opacity-10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary opacity-20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -22,6 +24,7 @@ export default function CTA() {
           </a>
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }
