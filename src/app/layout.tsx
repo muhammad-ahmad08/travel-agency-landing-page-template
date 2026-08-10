@@ -18,22 +18,22 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Al-Safar Tours | Premium Hajj, Umrah & International Travel",
-    template: "%s | Al-Safar Tours" // This automatically adds your brand name to sub-pages
+    default: "Al-Safar Travels | Premium Hajj, Umrah & International Travel",
+    template: "%s | Al-Safar Travels" // This automatically adds your brand name to sub-pages
   },
   description: "Book your trusted spiritual journey and international vacations. Premium Hajj & Umrah packages, visa services, and luxury tours with 100% transparency.",
   keywords: ["Hajj Packages", "Umrah Packages", "Visa Services", "International Tours", "Travel Agency", "Visit Visa", "Study Visa"],
   openGraph: {
     title: "Al-Safar Tours | Premium Travel Agency",
     description: "Experience premium Umrah, Hajj and international tours with unparalleled service.",
-    url: "https://your-website-url.com", // Change this later when you get the live link
-    siteName: "Al-Safar Tours",
+    url: "https://travel-agency-landing-page-template.vercel.app/", // Change this later when you get the live link
+    siteName: "Al-Safar Travels",
     images: [
       {
         url: "/images/hero-bg.jpg", // Use your beautiful hero image for social sharing
         width: 1200,
         height: 630,
-        alt: "Al-Safar Tours",
+        alt: "Al-Safar Travels",
       }
     ],
     locale: "en_US",

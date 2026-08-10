@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 import Reveal from "../ui/Reveal";
+import { siteConfig } from "@/config";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -36,7 +37,7 @@ export default function Contact() {
 
       // 2. Open WhatsApp with the pre-filled message
       const whatsappMessage = `*New Travel Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Destination:* ${formData.destination}%0A*Message:* ${formData.message}`;
-      const whatsappNumber = "923001234567"; 
+      const whatsappNumber = "923245693908"; 
       window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
 
       // 3. Show success message and reset form
