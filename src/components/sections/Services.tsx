@@ -8,7 +8,7 @@ import Reveal from "../ui/Reveal";
 const services = [
   {
     icon: <FaMosque className="text-4xl text-gold" />,
-    title: "Hajj & Umrah Packages",
+    title: "Custom Hajj & Umrah Packages",
     description:
       "Embark on your spiritual journey with our premium, all-inclusive packages. 5-star hotels steps away from the Haram, expert guides, and seamless transportation.",
   },
