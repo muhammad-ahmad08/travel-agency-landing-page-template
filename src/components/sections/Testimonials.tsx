@@ -59,7 +59,7 @@ export default function Testimonials() {
       <Container>
         <SectionTitle subtitle="Client Testimonials" title="What Our Travelers Say" />
         
-        <div className="max-w-3xl mx-auto relative h-[300px] md:h-[250px]">
+        <div className="max-w-3xl mx-auto relative">
           {/* 3. Framer Motion Animation Wrapper */}
           <AnimatePresence mode="wait">
             <motion.div
@@ -99,7 +99,7 @@ export default function Testimonials() {
         </div>
 
         {/* 4. Manual Dots to click through reviews */}
-        <div className="flex justify-center gap-2 mt-16">
+        <div className="flex justify-center gap-2 mt-8">
           {reviews.map((_, index) => (
             <button
               key={index}
