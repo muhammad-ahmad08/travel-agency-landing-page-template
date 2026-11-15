@@ -1,4 +1,4 @@
-# 🌍 Al-Safar Travels | Premium Travel Agency & Tour Operator Landing Page
+# Al-Safar Travels | Premium Travel Agency & Tour Operator Landing Page
 
 A modern, high-conversion, fully responsive landing page template tailored for travel agencies, tour operators, and spiritual/vacation travel booking services (Hajj & Umrah, international tours, visa assistance, and luxury getaways). Built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion / Motion**.
 
@@ -12,14 +12,14 @@ A modern, high-conversion, fully responsive landing page template tailored for t
 
 ## ✨ Key Features
 
-- **⚡ Next.js 16 App Router**: Server components, optimized fonts (Inter & Poppins), and lightning-fast static export support.
-- **🎨 Modern & Responsive UI**: Built with Tailwind CSS v4 and custom animations powered by **Motion**.
-- **📜 Intersection Scroll Animations**: Smooth, polished fade-in reveals that trigger once per element on initial scroll.
-- **🌟 Featured Packages Grid**: Interactive cards highlighting Hajj & Umrah, Turkey, Dubai, Maldives, and Egypt tours with pricing, duration, and direct inquiry triggers.
-- **💬 Testimonials Carousel**: Auto-sliding and manual dot-navigation review cards with guaranteed spacing (no overlap).
-- **📱 Conversion Boosters**: Floating WhatsApp chat button, scroll progress bar, trust badges bar, and responsive mobile drawer navigation.
-- **📧 Inquiry & Contact Form**: Professional contact section with server-side API handling via Resend.
-- **☁️ CI/CD Deployment Ready**: Fully configured with GitHub Actions to automatically build and sync static exports to **AWS S3**.
+- ** Next.js 16 App Router**: Server components, optimized fonts (Inter & Poppins), and lightning-fast static export support.
+- ** Modern & Responsive UI**: Built with Tailwind CSS v4 and custom animations powered by **Motion**.
+- ** Intersection Scroll Animations**: Smooth, polished fade-in reveals that trigger once per element on initial scroll.
+- ** Featured Packages Grid**: Interactive cards highlighting Hajj & Umrah, Turkey, Dubai, Maldives, and Egypt tours with pricing, duration, and direct inquiry triggers.
+- ** Testimonials Carousel**: Auto-sliding and manual dot-navigation review cards with guaranteed spacing (no overlap).
+- ** Conversion Boosters**: Floating WhatsApp chat button, scroll progress bar, trust badges bar, and responsive mobile drawer navigation.
+- ** Inquiry & Contact Form**: Professional contact section with server-side API handling via Resend.
+- ** CI/CD Deployment Ready**: Fully configured with GitHub Actions to automatically build and sync static exports to **AWS S3**.
 
 ---
 
